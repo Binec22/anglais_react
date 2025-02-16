@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from 'react';
+// Carte.js
+import React, { useState, useEffect, useRef } from 'react';
 import './Carte.css';
 
-function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable, onTurn, isTurnable, infoText, initialSide = "recto" }) {
+function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable, onTurn, isTurnable, infoText, initialSide = "recto", isTurned, position }) {
     const [isRecto, setIsRecto] = useState(initialSide === "recto");
-    const [position, setPosition] = useState({ x: 0, y: 0 });
     const [offset, setOffset] = useState({ x: 0, y: 0 });
     const [isShaking, setIsShaking] = useState(false);
+    const cardRef = useRef(null);
 
     useEffect(() => {
-        const randomX = Math.floor(Math.random() * (window.innerWidth - 200)); // 200 est une largeur approximative de carte
-        const randomY = Math.floor(Math.random() * (window.innerHeight - 300)); // 300 est une hauteur approximative de carte
-        setPosition({ x: randomX, y: randomY });
-    }, []);
+        if (isTurned !== undefined) {
+            setIsRecto(!isTurned);
+        }
+    }, [isTurned]);
 
     const toggleSide = () => {
         if (retournable && isTurnable) {
@@ -28,7 +29,7 @@ function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable
     };
 
     const handleDragStart = (e) => {
-        const rect = e.target.getBoundingClientRect();
+        const rect = cardRef.current.getBoundingClientRect();
         setOffset({
             x: e.clientX - rect.left,
             y: e.clientY - rect.top,
@@ -39,23 +40,18 @@ function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable
 
     const handleDrag = (e) => {
         if (e.clientX === 0 && e.clientY === 0) return; // Empêcher des mises à jour invalides
-        setPosition({
+        const newPosition = {
             x: e.clientX - offset.x,
             y: e.clientY - offset.y,
-        });
+        };
+        // Met à jour la position de la carte
+        cardRef.current.style.left = `${newPosition.x}px`;
+        cardRef.current.style.top = `${newPosition.y}px`;
     };
-
-    const handleDragEnd = (e) => {
-        setPosition({
-            x: e.clientX - offset.x,
-            y: e.clientY - offset.y,
-        });
-    };
-
-
 
     return (
         <div
+            ref={cardRef}
             className={`carte ${isShaking ? 'carte-shake' : ''}`}
             style={{
                 position: 'absolute',
@@ -67,9 +63,7 @@ function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable
             onClick={toggleSide}
             onDragStart={handleDragStart}
             onDrag={handleDrag}
-            onDragEnd={handleDragEnd}
         >
-            {/* Card Content */}
             {isRecto ? (
                 <div className="carte-verso">
                     {versoImage && <img src={versoImage} alt="Verso" className="carte-image" />}

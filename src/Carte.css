@@ -1,6 +1,6 @@
 /* src/Carte.css */
 .carte {
-    width: 200px;
+    width: 150px;
     height: 200px;
     background-color: #606060;
     border-radius: 15px;
@@ -13,7 +13,6 @@
 }
 
 .carte-recto, .carte-verso {
-    position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
@@ -48,7 +47,7 @@
 }
 
 .carte-image {
-    width: 198px;
+    width: 148px;
     height: 198px;
     border-radius: 8px;
 }
@@ -56,9 +55,8 @@
 /* Icône d'information */
 .info-icon {
     position: absolute;
-    right: 30px;
-    font-size: 18px;
-    color: #555;
+    right: 10px;
+    font-size: 25px;
     cursor: help;
 }
 
@@ -83,4 +81,8 @@
 .info-icon:hover .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+p {
+    margin-top: 5px;
 }

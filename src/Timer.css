@@ -1,0 +1,45 @@
+/* Timer.css */
+.timer-box {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    z-index: 1000; /* Assure que le chronomètre est au-dessus des autres éléments */
+}
+
+.timer-display {
+    font-size: 2em;
+}
+
+.penalty-button, .stop-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.penalty-button:hover, .stop-button:hover {
+    background-color: #ff4500;
+}
+
+.penalty {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}

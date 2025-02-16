@@ -1,0 +1,87 @@
+/* HomePage.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth; /* Pour un défilement fluide */
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Assure que le conteneur couvre au moins la hauteur de la fenêtre */
+  background: url('https://mistralaiblackforestprod.blob.core.windows.net/images/blackforest/0283/9d88/-d20/3-4d86-ba5f-6d8af1c9c6c8/image.jpg') no-repeat center center/cover;
+  background-attachment: fixed; /* Fixe l'arrière-plan */
+  color: white;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative; /* Pour le bon positionnement */
+}
+
+.content-wrapper {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Assure que le contenu est au-dessus de l'arrière-plan */
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: #ff6347;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.rules {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  z-index: 1; /* Assure que le contenu est au-dessus de l'arrière-plan */
+  position: relative; /* Pour le bon positionnement */
+}
+
+.rules h2 {
+  font-size: 2em;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  color: #ff6347;
+}
+
+.rules p, .rules ul, .rules ol {
+  font-size: 1em;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.rules ul, .rules ol {
+  margin-left: 20px;
+}
+
+.start-button {
+  background-color: #ff6347;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Assure que le bouton est au-dessus de l'arrière-plan */
+  position: relative; /* Pour le bon positionnement */
+}
+
+.start-button:hover {
+  background-color: #ff4500;
+}

@@ -21,3 +21,24 @@
     transform: rotate(360deg);
   }
 }
+
+.rules-link {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000; /* Assurez-vous que le lien est au-dessus des autres éléments */
+}
+
+.rules-link a {
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.rules-link a:hover {
+  background-color: #0056b3;
+}
+
