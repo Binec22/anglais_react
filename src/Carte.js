@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Carte.css';
 
-function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable, onTurn, isTurnable, infoText, initialSide = "recto", isTurned, position }) {
+function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable, onTurn, isTurnable, infoText, initialSide = "recto", isTurned, position, openModal}) {
     const [isRecto, setIsRecto] = useState(initialSide === "recto");
     const [offset, setOffset] = useState({ x: 0, y: 0 });
     const [isShaking, setIsShaking] = useState(false);
@@ -58,6 +58,8 @@ function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable
                 left: `${position.x}px`,
                 top: `${position.y}px`,
                 cursor: 'grab',
+                width: '320px', // Largeur ajustée pour accueillir les deux parties
+                height: '200px', // Hauteur ajustée
             }}
             draggable
             onClick={toggleSide}
@@ -65,18 +67,25 @@ function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable
             onDrag={handleDrag}
         >
             {isRecto ? (
-                <div className="carte-verso">
-                    {versoImage && <img src={versoImage} alt="Verso" className="carte-image" />}
-                    <p>{versoContent}</p>
+                <div className="carte-recto" style={{ display: 'flex' }}>
+                    <div className="carte-image-container" style={{ flex: 1 }}>
+                        {rectoImage && <img src={rectoImage} alt="Recto" className="carte-image"/>}
+                    </div>
+                    <div className="carte-text-container" style={{ flex: 1 }}>
+                        <div className="info-icon" onClick={openModal}>
+                            ⓘ
+                            <span className="tooltip">{infoText}</span>
+                        </div>
+                        <h4>{rectoContent}</h4>
+                        <div className="info-text">
+                            <p>{infoText}</p>
+                        </div>
+                    </div>
                 </div>
             ) : (
-                <div className="carte-recto">
-                    <div className="info-icon">
-                        ⓘ
-                        <span className="tooltip">{infoText}</span>
-                    </div>
-                    {rectoImage && <img src={rectoImage} alt="Recto" className="carte-image"/>}
-                    <p>{rectoContent}</p>
+                <div className="carte-verso" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {versoImage && <img src={versoImage} alt="Verso" className="carte-image" />}
+                    <p>{versoContent}</p>
                 </div>
             )}
         </div>
