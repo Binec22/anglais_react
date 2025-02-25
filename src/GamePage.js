@@ -24,7 +24,7 @@ const GamePage = () => {
 
     const [activeCards, setActiveCards] = useState([10, 36, 46]);
     const [visibleCards, setVisibleCards] = useState([10, 36, 46, 16, 17, 42, 41, 22, 57, 4, 20, 79, 99]);
-    const [turnedCards, setTurnedCards] = useState([10, 36]);
+    const [turnedCards, setTurnedCards] = useState([46, 16, 17, 42, 41, 22, 57, 4, 20, 79, 99]);
     const [gameEnded, setGameEnded] = useState(false);
     const [cardPositions, setCardPositions] = useState([]);
     const [penaltySeconds, setPenaltySeconds] = useState(0);

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Carte.css';
 
 function Carte({ rectoContent, versoContent, rectoImage, versoImage, retournable, onTurn, isTurnable, infoText, initialSide = "recto", isTurned, position, openModal}) {
-    const [isRecto, setIsRecto] = useState(initialSide === "recto");
+    const [isRecto, setIsRecto] = useState(initialSide === "verso");
     const [offset, setOffset] = useState({ x: 0, y: 0 });
     const [isShaking, setIsShaking] = useState(false);
     const cardRef = useRef(null);
