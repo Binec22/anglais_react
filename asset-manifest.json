@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "//pabz5.github.io/static/css/main.2060805e.css",
-    "main.js": "//pabz5.github.io/static/js/main.c107a9e5.js",
-    "static/js/453.cae4d82b.chunk.js": "//pabz5.github.io/static/js/453.cae4d82b.chunk.js",
-    "index.html": "//pabz5.github.io/index.html",
-    "main.2060805e.css.map": "//pabz5.github.io/static/css/main.2060805e.css.map",
-    "main.c107a9e5.js.map": "//pabz5.github.io/static/js/main.c107a9e5.js.map",
-    "453.cae4d82b.chunk.js.map": "//pabz5.github.io/static/js/453.cae4d82b.chunk.js.map"
+    "main.css": "/anglais_react/static/css/main.2060805e.css",
+    "main.js": "/anglais_react/static/js/main.c5cee698.js",
+    "static/js/453.cae4d82b.chunk.js": "/anglais_react/static/js/453.cae4d82b.chunk.js",
+    "index.html": "/anglais_react/index.html",
+    "main.2060805e.css.map": "/anglais_react/static/css/main.2060805e.css.map",
+    "main.c5cee698.js.map": "/anglais_react/static/js/main.c5cee698.js.map",
+    "453.cae4d82b.chunk.js.map": "/anglais_react/static/js/453.cae4d82b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2060805e.css",
-    "static/js/main.c107a9e5.js"
+    "static/js/main.c5cee698.js"
   ]
 }
