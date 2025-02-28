@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "//pabz5.github.io/static/css/main.2060805e.css",
+    "main.js": "//pabz5.github.io/static/js/main.c107a9e5.js",
+    "static/js/453.cae4d82b.chunk.js": "//pabz5.github.io/static/js/453.cae4d82b.chunk.js",
+    "index.html": "//pabz5.github.io/index.html",
+    "main.2060805e.css.map": "//pabz5.github.io/static/css/main.2060805e.css.map",
+    "main.c107a9e5.js.map": "//pabz5.github.io/static/js/main.c107a9e5.js.map",
+    "453.cae4d82b.chunk.js.map": "//pabz5.github.io/static/js/453.cae4d82b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2060805e.css",
+    "static/js/main.c107a9e5.js"
+  ]
+}
